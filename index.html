@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cannabis Delivery in Sacramento | Cannagram</title>
+  <meta name="description" content="Same-day cannabis delivery in Sacramento and surrounding areas. Shop premium flower, edibles, vapes, and more. Order online at Cannagram." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #1a3a1f;
+      --green-mid: #2d6a35;
+      --green-fresh: #4caf50;
+      --green-light: #a5d6a7;
+      --gold: #c8a951;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #444;
+    }
+
+    /* ── Google Sites embed fix ── */
+    html {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #1a3a1f !important; /* matches hero so no flash of white */
+      overflow-x: hidden;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden;
+      /* Remove any default browser body margin */
+      -webkit-margin-before: 0;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, #3a7d44 100%);
+      padding: 72px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://www.cannagram.com/wp-content/uploads/2021/07/squiggle.svg') center/200px repeat;
+      opacity: 0.06;
+    }
+    .hero-logo {
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+    .hero-logo img {
+      height: 52px;
+      filter: brightness(0) invert(1);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto 18px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 span { color: var(--green-light); }
+    .hero p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-deep);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(200,169,81,0.4);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,169,81,0.5); }
+
+    /* SECTION WRAPPER */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .section p {
+      color: var(--text-mid);
+      font-size: 1.025rem;
+      margin-bottom: 16px;
+    }
+    .section a {
+      color: var(--green-mid);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c8d8ca, transparent);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .step-card {
+      background: var(--white);
+      border: 1px solid #dce8dc;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .step-card img { height: 60px; margin-bottom: 18px; }
+    .step-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+    .step-card p { font-size: 0.92rem; color: var(--text-mid); margin: 0; }
+
+    /* BRANDS STRIP */
+    .brands-section {
+      background: var(--green-deep);
+      padding: 52px 24px;
+      text-align: center;
+    }
+    .brands-section .section-label { color: var(--green-light); }
+    .brands-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--white);
+      margin-bottom: 36px;
+    }
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 36px;
+    }
+    .brand-pill {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 10px 24px;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .brand-pill:hover { background: rgba(255,255,255,0.2); }
+    .brands-section a.cta-link {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-deep);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 32px;
+      border-radius: 50px;
+    }
+
+    /* DEALS BANNER */
+    .deals-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+    .deal-card {
+      background: var(--white);
+      border: 2px solid var(--green-fresh);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+    .deal-card img {
+      width: 260px;
+      height: 160px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .deal-content {
+      padding: 24px 28px;
+    }
+    .deal-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+    .deal-content p { font-size: 0.92rem; color: var(--text-mid); margin-bottom: 14px; }
+    .deal-content a {
+      display: inline-block;
+      background: var(--green-mid);
+      color: white;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 50px;
+    }
+
+    /* CITIES */
+    .cities-section {
+      background: #eef4ee;
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .cities-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+    .cities-section p { color: var(--text-mid); margin-bottom: 28px; font-size: 0.97rem; }
+    .cities-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 760px;
+      margin: 0 auto 32px;
+    }
+    .city-tag {
+      background: var(--white);
+      border: 1px solid #c0d4c1;
+      border-radius: 50px;
+      padding: 7px 18px;
+      font-size: 0.88rem;
+      color: var(--green-deep);
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .city-tag:hover { background: var(--green-mid); color: white; border-color: var(--green-mid); }
+    .cities-section a.cta-main {
+      display: inline-block;
+      background: var(--green-mid);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 13px 34px;
+      border-radius: 50px;
+      font-size: 0.97rem;
+    }
+
+    /* ARTICLE BODY */
+    .article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--green-deep);
+      margin: 36px 0 14px;
+    }
+    .article p { color: var(--text-mid); margin-bottom: 16px; font-size: 1.015rem; }
+    .article a { color: var(--green-mid); font-weight: 600; }
+    .article ul { margin: 12px 0 16px 22px; color: var(--text-mid); }
+    .article ul li { margin-bottom: 8px; font-size: 1rem; }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .footer-cta h2 {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .footer-cta p { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+    .footer-cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-deep);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-deep);
+      text-align: center;
+      padding: 24px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .deal-card { flex-direction: column; }
+      .deal-card img { width: 100%; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <a href="https://www.cannagram.com/" class="hero-logo" rel="dofollow">
+      <img src="https://www.cannagram.com/wp-content/uploads/2023/10/menu-logo-primary-cannagram-weed-delivery-service.svg" alt="Cannagram – Cannabis Delivery Sacramento" />
+    </a>
+    <h1>Sacramento's #1 <span>Cannabis Delivery</span> Service</h1>
+    <p>Premium weed delivered to your door in 1–3 hours. Same-day delivery, daily 9 AM – 9 PM.</p>
+    <a href="https://www.cannagram.com/menu/" rel="dofollow" class="hero-cta">🛒 Shop the Menu</a>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <p class="section-label">How It Works</p>
+    <h2>Order Cannabis in 3 Simple Steps</h2>
+    <p>
+      <a href="https://www.cannagram.com/" rel="dofollow">Cannagram</a> makes cannabis delivery effortless. No dispensary trip needed — just browse, order, and relax while we bring it to you.
+    </p>
+    <div class="steps">
+      <div class="step-card">
+        <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-shop-online.svg" alt="Shop online icon" />
+        <h3>1. Shop Online</h3>
+        <p>Browse a curated menu of flower, edibles, vapes, concentrates, and more at <a href="https://www.cannagram.com/menu/" rel="dofollow">cannagram.com/menu</a>.</p>
+      </div>
+      <div class="step-card">
+        <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-relax.svg" alt="Relax icon" />
+        <h3>2. Sit Back & Relax</h3>
+        <p>Place your order online or through the <a href="https://onelink.to/cannagram-app" rel="dofollow">Cannagram app</a>. Our drivers head your way.</p>
+      </div>
+      <div class="step-card">
+        <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-enjoy.svg" alt="Enjoy icon" />
+        <h3>3. Enjoy</h3>
+        <p>Receive your order in 1–3 hours and enjoy a true cannabis concierge experience from home.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- BRANDS -->
+  <section class="brands-section">
+    <p class="section-label">Top Brands</p>
+    <h2>Premium Cannabis Brands</h2>
+    <div class="brands-grid">
+      <a href="https://www.cannagram.com/kiva-delivery-by-cannagram/" class="brand-pill" rel="dofollow">Kiva</a>
+      <a href="https://www.cannagram.com/west-coast-cure-cannabis-delivery/" class="brand-pill" rel="dofollow">West Coast Cure</a>
+      <a href="https://www.cannagram.com/alien-labs-cannabis-delivery/" class="brand-pill" rel="dofollow">Alien Labs</a>
+      <a href="https://www.cannagram.com/menu/brands/connected-cannabis-co-51608/" class="brand-pill" rel="dofollow">Connected Cannabis</a>
+      <a href="https://www.cannagram.com/menu/brands/stiiizy-250294/" class="brand-pill" rel="dofollow">Stiiizy</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">View All Brands →</a>
+    </div>
+    <a href="https://www.cannagram.com/weed-brands/" rel="dofollow" class="cta-link">Explore All Cannabis Brands</a>
+  </section>
+
+  <!-- DEALS -->
+  <section class="deals-section">
+    <p class="section-label">Current Promotions</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--green-deep);margin-bottom:28px;">Active Deals & Offers</h2>
+
+    <div class="deal-card">
+      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/dd832920-d582-4e24-983c-057c29b22c92.png?s=f3675ee8f15656e59d1dcddf2c3ad5a2" alt="$50 OFF first order at Cannagram cannabis delivery" />
+      <div class="deal-content">
+        <h3>$50 OFF on Orders of $150+</h3>
+        <p>First-time customers save up to 33% on their first order. Smaller orders? Use <strong>30FTC90</strong> ($30 off $90+) or <strong>40FTC120</strong> ($40 off $120+).</p>
+        <a href="https://www.cannagram.com/menu/" rel="dofollow">Claim Offer</a>
+      </div>
+    </div>
+
+    <div class="deal-card">
+      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/c6a195d3-4700-4c96-87e1-fc7d9f02544e.png?s=c2d7242e1f9fbdc612838ab480f1ce4d" alt="40% off selected products at Cannagram" />
+      <div class="deal-content">
+        <h3>40% Off Selected Products</h3>
+        <p>Massive discounts on curated products. Updated regularly — check the menu for the latest savings.</p>
+        <a href="https://www.cannagram.com/weed-deals/" rel="dofollow">See All Deals</a>
+      </div>
+    </div>
+
+    <div class="deal-card">
+      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/fb05ba05-f489-4bcf-ab0f-fd1101d1bc3b.png?s=5916dcf42cb93d0cdce6a4f18cc4e450" alt="Buy 2 Stiiizy get 1 for a penny at Cannagram" />
+      <div class="deal-content">
+        <h3>Stiiizy: Buy 2, Get 1 for a Penny</h3>
+        <p>Stock up on Stiiizy products. Purchase 2 and get a third for just $0.01. Flower excluded.</p>
+        <a href="https://www.cannagram.com/menu/brands/stiiizy-250294/" rel="dofollow">Shop Stiiizy</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:8px;">
+      <a href="https://www.cannagram.com/weed-deals/" rel="dofollow" style="color:var(--green-mid);font-weight:700;font-size:0.97rem;">→ View all current deals at Cannagram</a>
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CITIES -->
+  <section class="cities-section">
+    <p class="section-label">Delivery Coverage</p>
+    <h2>Weed Delivery Near You</h2>
+    <p>Cannagram delivers to the greater Sacramento area, including parts of Placer, El Dorado, and Yolo counties.</p>
+    <div class="cities-cloud">
+      <a href="https://www.cannagram.com/where-we-deliver/sacramento/" class="city-tag" rel="dofollow">Sacramento</a>
+      <a href="https://www.cannagram.com/where-we-deliver/roseville/" class="city-tag" rel="dofollow">Roseville</a>
+      <a href="https://www.cannagram.com/where-we-deliver/folsom/" class="city-tag" rel="dofollow">Folsom</a>
+      <a href="https://www.cannagram.com/where-we-deliver/citrus-heights/" class="city-tag" rel="dofollow">Citrus Heights</a>
+      <a href="https://www.cannagram.com/where-we-deliver/el-dorado-hills/" class="city-tag" rel="dofollow">El Dorado Hills</a>
+      <a href="https://www.cannagram.com/where-we-deliver/rocklin/" class="city-tag" rel="dofollow">Rocklin</a>
+      <a href="https://www.cannagram.com/where-we-deliver/granite-bay/" class="city-tag" rel="dofollow">Granite Bay</a>
+      <a href="https://www.cannagram.com/where-we-deliver/rancho-cordova-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">Rancho Cordova</a>
+      <a href="https://www.cannagram.com/where-we-deliver/fair-oaks-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">Fair Oaks</a>
+      <a href="https://www.cannagram.com/where-we-deliver/west-sacramento-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">West Sacramento</a>
+      <a href="https://www.cannagram.com/where-we-deliver/carmichael-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">Carmichael</a>
+      <a href="https://www.cannagram.com/where-we-deliver/antelope/" class="city-tag" rel="dofollow">Antelope</a>
+      <a href="https://www.cannagram.com/where-we-deliver/lincoln-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">Lincoln</a>
+      <a href="https://www.cannagram.com/where-we-deliver/north-highlands-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">North Highlands</a>
+      <a href="https://www.cannagram.com/where-we-deliver/cameron-park-cannabis-delivery-dispensary/" class="city-tag" rel="dofollow">Cameron Park</a>
+      <a href="https://www.cannagram.com/where-we-deliver/" class="city-tag" rel="dofollow" style="font-weight:700;">+ More Cities</a>
+    </div>
+    <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="cta-main">Check Your Delivery Area</a>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <article class="article">
+    <h2>Why Choose Cannagram for Cannabis Delivery?</h2>
+    <p>
+      <a href="https://www.cannagram.com/" rel="dofollow">Cannagram</a> is Sacramento's leading cannabis delivery service, offering a curated selection of premium products from top-tier brands directly to your door — no dispensary visit required. Whether you're a seasoned consumer or exploring cannabis for the first time, Cannagram provides a safe, convenient, and discreet experience.
+    </p>
+
+    <h2>Same-Day Cannabis Delivery in Sacramento</h2>
+    <p>
+      Cannagram delivers daily from 9:00 AM to 9:00 PM. Simply <a href="https://www.cannagram.com/menu/" rel="dofollow">browse the online menu</a>, place your order before 8 PM, and receive your products within 1–3 hours. Free delivery is available on orders that meet the minimum order value, which varies by ZIP code.
+    </p>
+
+    <h2>What Can You Order?</h2>
+    <p>The <a href="https://www.cannagram.com/menu/" rel="dofollow">Cannagram menu</a> features a wide range of cannabis categories:</p>
+    <ul>
+      <li><a href="https://www.cannagram.com/menu/categories/flower/" rel="dofollow">Flower</a> — Indoor, greenhouse, and outdoor strains from premium cultivators.</li>
+      <li><a href="https://www.cannagram.com/menu/categories/edibles/" rel="dofollow">Edibles</a> — Gummies, chocolates, and more from brands like Kiva.</li>
+      <li><a href="https://www.cannagram.com/menu/categories/vape/" rel="dofollow">Vapes</a> — Cartridges and disposables from Stiiizy, West Coast Cure, and others.</li>
+      <li><a href="https://www.cannagram.com/menu/categories/prerolls/" rel="dofollow">Pre-rolls</a> — Ready-to-smoke joints and infused options.</li>
+      <li><a href="https://www.cannagram.com/menu/categories/concentrates/" rel="dofollow">Concentrates</a> — Wax, shatter, live resin, and rosin.</li>
+      <li><a href="https://www.cannagram.com/menu/categories/beverages/" rel="dofollow">Beverages</a> — Cannabis-infused drinks for a smoke-free experience.</li>
+    </ul>
+
+    <h2>Loyalty Rewards & Exclusive Deals</h2>
+    <p>
+      Cannagram rewards repeat customers through their <a href="https://1872.w.alpineiq.com/a/login" rel="dofollow">Loyalty Wallet</a>, where points accumulate with every purchase and can be redeemed for discounts. New customers can take advantage of generous <a href="https://www.cannagram.com/weed-deals/" rel="dofollow">first-order promotions</a> — including up to $50 off orders of $150 or more.
+    </p>
+
+    <h2>Download the Cannagram App</h2>
+    <p>
+      For even faster ordering, <a href="https://onelink.to/cannagram-app" rel="dofollow">download the Cannagram app</a>. It's available for both iOS and Android and allows you to browse the full menu, track your delivery in real time, and access exclusive app-only deals.
+    </p>
+
+    <h2>Payment Options</h2>
+    <p>
+      Cannagram offers multiple <a href="https://www.cannagram.com/payment-options/" rel="dofollow">payment methods</a> for your convenience. Check their website for the most up-to-date options available in your area.
+    </p>
+  </article>
+
+  <!-- FOOTER CTA -->
+  <section class="footer-cta">
+    <h2>Ready to Order?</h2>
+    <p>Sacramento's best cannabis delivery is just a few clicks away. Open daily 9 AM – 9 PM.</p>
+    <a href="https://www.cannagram.com/menu/" rel="dofollow">🛒 Go to Cannagram's Menu</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      This page contains affiliate and informational links to <a href="https://www.cannagram.com/" rel="dofollow">Cannagram.com</a> — Sacramento's licensed cannabis delivery service. Must be 21+ to order. Available in select California areas only.
+    </p>
+  </footer>
+
+</body>
+</html>
