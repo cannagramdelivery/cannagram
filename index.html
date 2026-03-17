@@ -6,201 +6,234 @@
 <title>Cannagram — Same-Day Cannabis Delivery Sacramento</title>
 <meta name="description" content="Sacramento's #1 cannabis delivery service. Same-day weed delivery in 1–3 hours. Premium flower, edibles, vapes & more. Order at cannagram.com."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
+/* ── TOKENS ── */
 :root{
   --teal:#16a7b9;
   --green:#5ebf95;
-  --dark:#1a1a1a;
-  --darker:#111;
-  --charcoal:#393939;
+  --darker:#111111;
+  --charcoal:#2a2a2a;
+  --surface:#1e1e1e;
+  --surface2:#242424;
+  --border:rgba(255,255,255,.08);
+  --border-hover:rgba(22,167,185,.4);
+  --text:#f0eeea;
+  --muted:rgba(240,238,234,.5);
   --sativa:#f4511e;
   --indica:#3564b0;
   --hybrid:#58b758;
   --cbd:#7d6bbf;
-  --surface:#242424;
-  --border:rgba(255,255,255,.08);
-  --text:#f0eeea;
-  --muted:rgba(240,238,234,.55);
-  --grad:linear-gradient(135deg,#16a7b9,#5ebf95);
+  --grad:linear-gradient(135deg,#16a7b9 0%,#5ebf95 100%);
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
 }
+
+/* ── RESET ── */
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{margin:0!important;padding:0!important;background:var(--darker)!important;overflow-x:hidden}
-body{font-family:'Lora',Georgia,serif;color:var(--text);line-height:1.7;background:var(--darker)}
+html,body{margin:0!important;padding:0!important;overflow-x:hidden;background:var(--darker)!important}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:0}
+/* Headings always Fraunces */
+h1,h2,h3,.num{font-family:'Fraunces',Georgia,serif}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(17,17,17,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px}
-.nav-inner{max-width:1160px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo img{height:34px;filter:brightness(0) invert(1)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);letter-spacing:.3px;transition:color .2s}
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(17,17,17,.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-i{max-width:1200px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:32px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.2px;transition:color .18s}
 .nav-links a:hover{color:var(--teal)}
-.nav-cta{background:var(--grad);color:#fff;font-size:.82rem;font-weight:600;padding:9px 20px;border-radius:50px;letter-spacing:.3px;transition:opacity .2s}
-.nav-cta:hover{opacity:.85}
-@media(max-width:700px){.nav-links{display:none}}
+.nav-btn{background:var(--grad);color:#fff;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;padding:8px 18px;border-radius:50px;transition:opacity .18s;white-space:nowrap}
+.nav-btn:hover{opacity:.82}
+@media(max-width:680px){.nav-links{display:none}.nav-i{padding:0 16px}}
 
-/* HERO */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:80px 32px 100px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(22,167,185,.18) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 20% 70%,rgba(94,191,149,.1) 0%,transparent 60%),var(--darker);z-index:0}
-.hero-ring{position:absolute;right:-180px;top:50%;transform:translateY(-50%);width:680px;height:680px;border-radius:50%;border:1px solid rgba(22,167,185,.12);z-index:0}
-.hero-ring::before{content:'';position:absolute;inset:60px;border-radius:50%;border:1px solid rgba(94,191,149,.08)}
-.hero-ring::after{content:'';position:absolute;inset:130px;border-radius:50%;border:1px solid rgba(22,167,185,.06)}
-.hero-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(22,167,185,.12);border:1px solid rgba(22,167,185,.25);border-radius:50px;padding:6px 14px;font-size:.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:24px}
-.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-.hero h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
-.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.05rem;font-weight:300;color:var(--muted);max-width:440px;margin-bottom:40px;line-height:1.8}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;font-weight:600;font-size:.92rem;padding:14px 28px;border-radius:50px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(22,167,185,.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(22,167,185,.45)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.88rem;font-weight:500;border:1px solid var(--border);padding:13px 22px;border-radius:50px;transition:all .2s}
-.btn-ghost:hover{border-color:rgba(255,255,255,.2);color:var(--text)}
-.hero-visual{display:flex;flex-direction:column;gap:16px}
-.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .3s}
-.hero-card:hover{transform:translateY(-4px)}
-.hero-card img{width:100%;height:140px;object-fit:cover}
-.hero-card-body{padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
-.hero-card-body h4{font-size:.9rem;font-weight:600}
-.hero-card-body p{font-size:.78rem;color:var(--muted)}
-.hero-badge{background:var(--grad);font-size:.72rem;font-weight:700;color:#fff;padding:4px 10px;border-radius:50px;white-space:nowrap}
-.hero-card-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.hero-stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
-.hero-stat .num{font-family:'Fraunces',Georgia,serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-stat p{font-size:.78rem;color:var(--muted);margin-top:2px}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}}
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:88vh;
+  display:flex;align-items:center;
+  padding:72px 24px 88px;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 65% 40%,rgba(22,167,185,.16) 0%,transparent 65%),
+    radial-gradient(ellipse 45% 45% at 15% 65%,rgba(94,191,149,.09) 0%,transparent 55%),
+    var(--darker);
+}
+.hero-rings{position:absolute;right:-200px;top:50%;transform:translateY(-50%);width:720px;height:720px;z-index:0;pointer-events:none}
+.hero-rings div{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(22,167,185,.1)}
+.hero-rings div:nth-child(2){inset:70px;border-color:rgba(94,191,149,.07)}
+.hero-rings div:nth-child(3){inset:140px;border-color:rgba(22,167,185,.05)}
 
-/* TICKER */
-.ticker{background:var(--charcoal);padding:14px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.ticker-track{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
-.ticker-track span{font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:0 40px;font-family:'Lora',serif}
-.ticker-track span b{color:var(--teal);font-weight:700}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 
-/* SECTIONS */
-.section{max-width:1160px;margin:0 auto;padding:96px 32px}
-.label{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
-h2.title{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px}
-h2.title em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.subtitle{color:var(--muted);font-size:1rem;font-weight:300;max-width:520px;line-height:1.8}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(22,167,185,.1);border:1px solid rgba(22,167,185,.22);border-radius:50px;padding:5px 14px;font-size:.7rem;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 2s ease-in-out infinite;font-style:normal}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
 
-/* HOW IT WORKS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;border:1px solid var(--border);border-radius:24px;overflow:hidden}
-.step{background:var(--surface);padding:40px 32px;transition:background .3s}
-.step:hover{background:rgba(22,167,185,.07)}
-.step-num{font-family:'Fraunces',Georgia,serif;font-size:3.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:20px}
-.step img{height:48px;margin-bottom:20px;filter:brightness(0) invert(.9)}
-.step h3{font-family:'Fraunces',Georgia,serif;font-size:1.15rem;font-weight:700;margin-bottom:10px}
-.step p{font-size:.88rem;color:var(--muted);line-height:1.8}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:800;line-height:1.06;letter-spacing:-1px;margin-bottom:22px}
+.hero h1 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:420px;margin-bottom:36px;line-height:1.75;font-weight:400}
+
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:'DM Sans',sans-serif;font-weight:600;border-radius:50px;transition:all .2s;cursor:pointer;white-space:nowrap}
+.btn-fill{background:var(--grad);color:#fff;font-size:.9rem;padding:13px 26px;box-shadow:0 4px 20px rgba(22,167,185,.28)}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(22,167,185,.42)}
+.btn-outline{color:var(--muted);font-size:.85rem;border:1px solid var(--border);padding:12px 20px}
+.btn-outline:hover{border-color:rgba(255,255,255,.2);color:var(--text)}
+
+/* Hero right side cards */
+.hero-cards{display:flex;flex-direction:column;gap:14px}
+.hcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:transform .25s,border-color .25s}
+.hcard:hover{transform:translateY(-3px);border-color:rgba(22,167,185,.2)}
+.hcard img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center}
+.hcard-body{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hcard-body h4{font-size:.88rem;font-weight:600;font-family:'DM Sans',sans-serif}
+.hcard-body p{font-size:.75rem;color:var(--muted);margin-top:2px}
+.badge{background:var(--grad);font-size:.68rem;font-weight:700;color:#fff;padding:4px 10px;border-radius:50px;white-space:nowrap;font-family:'DM Sans',sans-serif}
+.hcard-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hstat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px}
+.hstat .num{font-size:1.55rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hstat p{font-size:.75rem;color:var(--muted);margin-top:4px;font-family:'DM Sans',sans-serif}
+
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:40px}.hero-cards{display:none}.hero{min-height:auto;padding:56px 24px 64px}}
+@media(max-width:480px){.hero{padding:48px 16px 56px}.hero h1{font-size:2.2rem}}
+
+/* ── TICKER ── */
+.ticker{background:var(--charcoal);padding:12px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ticker-wrap{display:flex;white-space:nowrap;animation:tick 28s linear infinite}
+.ticker-wrap span{font-size:.72rem;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);padding:0 36px;font-family:'DM Sans',sans-serif}
+.ticker-wrap span b{color:var(--teal);font-weight:700}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ── SHARED LAYOUT ── */
+.wrap{max-width:1200px;margin:0 auto;padding:80px 24px}
+.sec-alt{background:var(--surface)}
+.sec-alt2{background:var(--charcoal)}
+.sec-alt .wrap,.sec-alt2 .wrap{max-width:1200px;margin:0 auto;padding:80px 24px}
+
+.lbl{font-size:.67rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;font-family:'DM Sans',sans-serif}
+h2.ttl{font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.5px;line-height:1.15;margin-bottom:14px}
+h2.ttl em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{color:var(--muted);font-size:.97rem;max-width:500px;line-height:1.75;margin-bottom:48px}
+
+hr.div{border:none;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent)}
+
+/* ── STEPS ── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:0}
+.step{background:var(--surface2);padding:36px 28px;transition:background .25s}
+.step:hover{background:rgba(22,167,185,.06)}
+.step-n{font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:18px}
+.step img{height:44px;margin-bottom:16px;opacity:.85;filter:brightness(0) invert(1)}
+.step h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;font-family:'DM Sans',sans-serif}
+.step p{font-size:.85rem;color:var(--muted);line-height:1.75}
 .step a{color:var(--teal);font-weight:600}
-@media(max-width:700px){.steps{grid-template-columns:1fr}}
+@media(max-width:680px){.steps{grid-template-columns:1fr}}
 
-/* CATEGORIES */
-.cats-wrap{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 32px}
-.cats-inner{max-width:1160px;margin:0 auto}
-.cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:12px;margin-top:48px}
-.cat{background:var(--darker);border:1px solid var(--border);border-radius:16px;padding:22px 12px;text-align:center;cursor:pointer;transition:all .25s;text-decoration:none;display:block}
+/* ── CATEGORIES ── */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin-top:0}
+.cat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-md);padding:26px 16px;cursor:pointer;transition:all .22s;text-decoration:none}
 .cat:hover{border-color:var(--teal);background:rgba(22,167,185,.08);transform:translateY(-3px)}
-.cat-icon{font-size:1.5rem;display:block;margin-bottom:8px}
-.cat span{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .25s}
+.cat-ico{font-size:2rem;line-height:1}
+.cat span{font-size:.8rem;font-weight:600;color:var(--muted);font-family:'DM Sans',sans-serif;transition:color .22s;text-align:center}
 .cat:hover span{color:var(--teal)}
+@media(max-width:480px){.cats{grid-template-columns:repeat(3,1fr)}.cat{padding:20px 10px}}
 
-/* STRAINS */
-.strains-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.strain{border-radius:20px;padding:32px 24px;text-decoration:none;display:block;position:relative;overflow:hidden;transition:transform .25s}
-.strain::before{content:'';position:absolute;top:-40px;right:-40px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.07)}
-.strain:hover{transform:translateY(-4px) scale(1.01)}
-.strain.sativa{background:var(--sativa)}
-.strain.indica{background:var(--indica)}
-.strain.hybrid{background:var(--hybrid)}
-.strain.cbd{background:var(--cbd)}
-.strain-tag{display:inline-block;background:rgba(255,255,255,.2);border-radius:50px;font-size:.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
-.strain h3{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:6px}
-.strain p{font-size:.83rem;color:rgba(255,255,255,.8);line-height:1.65}
-@media(max-width:800px){.strains-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.strains-grid{grid-template-columns:1fr}}
+/* ── STRAINS ── */
+.strains{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:0}
+.strain{border-radius:var(--radius-md);padding:28px 22px;text-decoration:none;display:block;position:relative;overflow:hidden;transition:transform .22s,filter .22s}
+.strain::after{content:'';position:absolute;top:-50px;right:-50px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.08);pointer-events:none}
+.strain:hover{transform:translateY(-4px) scale(1.015);filter:brightness(1.05)}
+.strain.sv{background:var(--sativa)}
+.strain.in{background:var(--indica)}
+.strain.hy{background:var(--hybrid)}
+.strain.cb{background:var(--cbd)}
+.strain-pill{display:inline-block;background:rgba(255,255,255,.22);border-radius:50px;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;margin-bottom:12px;font-family:'DM Sans',sans-serif}
+.strain h3{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.2}
+.strain p{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.6;font-family:'DM Sans',sans-serif}
+@media(max-width:800px){.strains{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.strains{grid-template-columns:1fr 1fr;gap:10px}.strain{padding:22px 16px}}
 
-/* BRANDS */
-.brands-wrap{background:var(--charcoal);padding:80px 32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.brands-inner{max-width:1160px;margin:0 auto}
-.brands-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
-.brand-pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50px;padding:10px 22px;font-size:.86rem;font-weight:500;color:var(--muted);transition:all .2s;text-decoration:none}
-.brand-pill:hover{background:rgba(22,167,185,.12);border-color:var(--teal);color:var(--teal)}
-.brands-cta{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;font-weight:600;font-size:.88rem;padding:12px 26px;border-radius:50px;margin-top:36px;transition:opacity .2s}
-.brands-cta:hover{opacity:.85}
+/* ── BRANDS ── */
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:0}
+.pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50px;padding:9px 20px;font-size:.83rem;font-weight:500;color:var(--muted);transition:all .18s;font-family:'DM Sans',sans-serif}
+.pill:hover{background:rgba(22,167,185,.1);border-color:var(--teal);color:var(--teal)}
 
-/* DEALS */
-.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
-.deal{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .25s,border-color .25s}
+/* ── DEALS ── */
+.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.deal{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,border-color .22s}
 .deal:hover{transform:translateY(-4px);border-color:rgba(22,167,185,.35)}
-.deal img{width:100%;height:150px;object-fit:cover}
-.deal-body{padding:22px 20px}
-.deal-label{display:inline-block;background:rgba(22,167,185,.15);color:var(--teal);border-radius:50px;font-size:.67rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;margin-bottom:12px}
-.deal-body h3{font-family:'Fraunces',Georgia,serif;font-size:1.05rem;font-weight:700;line-height:1.3;margin-bottom:8px}
-.deal-body p{font-size:.83rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
-.deal-btn{display:inline-flex;align-items:center;gap:6px;background:var(--grad);color:#fff;font-size:.78rem;font-weight:700;padding:8px 18px;border-radius:50px;transition:opacity .2s}
-.deal-btn:hover{opacity:.85}
-@media(max-width:800px){.deals{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.deals{grid-template-columns:1fr}}
+.deal-img-wrap{width:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;overflow:hidden;height:200px}
+.deal-img{width:100%;height:200px;object-fit:contain;object-position:center;display:block}
+.deal-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.deal-tag{display:inline-block;background:rgba(22,167,185,.14);color:var(--teal);border-radius:50px;font-size:.64rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;margin-bottom:10px;font-family:'DM Sans',sans-serif;width:fit-content}
+.deal-body h3{font-size:1rem;font-weight:700;line-height:1.3;margin-bottom:7px;font-family:'DM Sans',sans-serif}
+.deal-body p{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:16px;flex:1}
+.deal-btn{display:inline-flex;align-items:center;gap:5px;background:var(--grad);color:#fff;font-size:.78rem;font-weight:700;padding:9px 18px;border-radius:50px;transition:opacity .18s;font-family:'DM Sans',sans-serif;width:fit-content}
+.deal-btn:hover{opacity:.82}
+@media(max-width:760px){.deals{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.deals{grid-template-columns:1fr}}
 
-/* CITIES */
-.cities-wrap{padding:80px 32px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.cities-inner{max-width:1160px;margin:0 auto}
-.cities-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
-.city{display:block;background:var(--darker);border:1px solid var(--border);border-radius:50px;padding:8px 18px;font-size:.82rem;font-weight:500;color:var(--muted);transition:all .2s;text-decoration:none}
-.city:hover{background:rgba(22,167,185,.1);border-color:var(--teal);color:var(--teal)}
-.cities-cta{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;font-weight:600;font-size:.88rem;padding:13px 26px;border-radius:50px;margin-top:36px;transition:opacity .2s}
-.cities-cta:hover{opacity:.85}
+/* ── INFO BAND ── */
+.info-band{background:var(--grad);padding:0}
+.info-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.info-item{padding:32px 24px;text-align:center;background:rgba(0,0,0,.1);border-right:1px solid rgba(255,255,255,.12)}
+.info-item:last-child{border-right:none}
+.info-item h4{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'DM Sans',sans-serif}
+.info-item p{font-size:.78rem;color:rgba(255,255,255,.78);line-height:1.55;font-family:'DM Sans',sans-serif}
+@media(max-width:680px){.info-grid{grid-template-columns:1fr 1fr}.info-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}}
+@media(max-width:380px){.info-grid{grid-template-columns:1fr}}
 
-/* INFO BAND */
-.info-band{background:var(--grad);padding:52px 32px}
-.info-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
-.info-item{text-align:center;padding:24px 16px;background:rgba(0,0,0,.12);border-radius:4px}
-.info-item h4{font-family:'Fraunces',Georgia,serif;font-size:.88rem;font-weight:700;color:#fff;letter-spacing:.3px;margin-bottom:6px}
-.info-item p{font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.6}
-@media(max-width:700px){.info-grid{grid-template-columns:1fr 1fr}}
+/* ── CITIES ── */
+.cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:0}
+.city{display:block;background:var(--surface2);border:1px solid var(--border);border-radius:50px;padding:7px 16px;font-size:.8rem;font-weight:500;color:var(--muted);transition:all .18s;font-family:'DM Sans',sans-serif}
+.city:hover{background:rgba(22,167,185,.09);border-color:var(--teal);color:var(--teal)}
 
-/* ARTICLE */
-.article{max-width:800px;margin:0 auto;padding:96px 32px}
-.article h2{font-family:'Fraunces',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--text);margin:44px 0 14px;letter-spacing:-.3px}
-.article p{color:var(--muted);font-size:.97rem;margin-bottom:16px;line-height:1.9}
-.article a{color:var(--teal);font-weight:600;border-bottom:1px solid rgba(22,167,185,.3);transition:border-color .2s}
+/* ── ARTICLE ── */
+.article{max-width:760px;margin:0 auto;padding:80px 24px}
+.article h2{font-size:1.35rem;font-weight:800;color:var(--text);margin:40px 0 12px;letter-spacing:-.2px}
+.article p{color:var(--muted);font-size:.95rem;margin-bottom:14px;line-height:1.85;font-family:'DM Sans',sans-serif}
+.article a{color:var(--teal);font-weight:600;border-bottom:1px solid rgba(22,167,185,.25);transition:border-color .18s}
 .article a:hover{border-color:var(--teal)}
-.article ul{margin:12px 0 16px 20px;color:var(--muted)}
-.article ul li{margin-bottom:10px;font-size:.95rem;line-height:1.8}
+.article ul{margin:10px 0 14px 18px;color:var(--muted);font-family:'DM Sans',sans-serif}
+.article ul li{margin-bottom:8px;font-size:.93rem;line-height:1.75}
 .article ul li a{color:var(--teal);font-weight:600}
 
-/* FOOTER CTA */
-.footer-cta{position:relative;text-align:center;padding:120px 32px;overflow:hidden}
-.footer-cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(22,167,185,.15) 0%,transparent 70%);pointer-events:none}
-.footer-cta h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:16px;position:relative}
-.footer-cta h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.footer-cta p{color:var(--muted);font-size:1.05rem;margin-bottom:40px;position:relative}
-.footer-cta a{position:relative}
+/* ── FOOTER CTA ── */
+.fcta{position:relative;text-align:center;padding:100px 24px;overflow:hidden}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(22,167,185,.13) 0%,transparent 65%);pointer-events:none}
+.fcta h2{position:relative;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.5px;line-height:1.1;margin-bottom:14px}
+.fcta h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fcta p{position:relative;color:var(--muted);font-size:.97rem;margin-bottom:36px;font-family:'DM Sans',sans-serif}
 
-/* FOOTER */
-footer{background:var(--charcoal);border-top:1px solid var(--border);padding:32px;text-align:center}
-footer p{font-size:.78rem;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
+/* ── FOOTER ── */
+footer{background:var(--charcoal);border-top:1px solid var(--border);padding:28px 24px;text-align:center}
+footer p{font-size:.75rem;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8;font-family:'DM Sans',sans-serif}
 footer a{color:var(--teal);font-weight:500}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.r.on{opacity:1;transform:none}
+.r1{transition-delay:.08s}
+.r2{transition-delay:.16s}
+.r3{transition-delay:.24s}
 </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
-  <div class="nav-inner">
-    <a href="https://www.cannagram.com/" rel="dofollow" class="nav-logo">
-      <img src="https://www.cannagram.com/wp-content/uploads/2023/10/menu-logo-primary-cannagram-weed-delivery-service.svg" alt="Cannagram"/>
+  <div class="nav-i">
+    <a href="https://www.cannagram.com/" rel="dofollow" class="logo">
+      <img src="https://www.cannagram.com/wp-content/uploads/2023/10/menu-logo-primary-cannagram-weed-delivery-service.svg" alt="Cannagram Cannabis Delivery Sacramento"/>
     </a>
     <ul class="nav-links">
       <li><a href="https://www.cannagram.com/menu/" rel="dofollow">Menu</a></li>
@@ -209,41 +242,46 @@ footer a{color:var(--teal);font-weight:500}
       <li><a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow">Delivery Areas</a></li>
       <li><a href="https://www.cannagram.com/faq/" rel="dofollow">FAQ</a></li>
     </ul>
-    <a href="https://www.cannagram.com/menu/" rel="dofollow" class="nav-cta">Order Now</a>
+    <a href="https://www.cannagram.com/menu/" rel="dofollow" class="nav-btn">Order Now</a>
   </div>
 </nav>
 
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-ring"></div>
+  <div class="hero-rings"><div></div><div></div><div></div></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow"><span></span>Open Daily · 9 AM – 9 PM</div>
+      <div class="eyebrow"><i></i>Open Daily · 9 AM – 9 PM</div>
       <h1>Sacramento's <em>Premium<br/>Cannabis</em> Delivery</h1>
-      <p class="hero-sub">Order from the most curated cannabis menu in the Sacramento area. Delivered in 1–3 hours — or schedule for whenever works for you.</p>
-      <div class="hero-actions">
-        <a href="https://www.cannagram.com/menu/" rel="dofollow" class="btn-primary">Shop the Menu <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="btn-ghost">Check My Area</a>
+      <p class="hero-sub">The most curated cannabis menu in Sacramento — delivered to your door in 1–3 hours. Order online or schedule for whenever works for you.</p>
+      <div class="hero-btns">
+        <a href="https://www.cannagram.com/menu/" rel="dofollow" class="btn btn-fill">
+          Shop the Menu
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M6.5 1.5l5 5-5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="btn btn-outline">Check My Area</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card reveal">
-        <img src="https://tymber-s3.imgix.net/cannagram-169/deals/dd832920-d582-4e24-983c-057c29b22c92.png?s=f3675ee8f15656e59d1dcddf2c3ad5a2" alt="First Order Discount Cannagram"/>
-        <div class="hero-card-body">
+    <div class="hero-cards r">
+      <div class="hcard">
+        <img src="https://tymber-s3.imgix.net/cannagram-169/deals/dd832920-d582-4e24-983c-057c29b22c92.png?s=f3675ee8f15656e59d1dcddf2c3ad5a2" alt="First order $50 off Cannagram"/>
+        <div class="hcard-body">
           <div><h4>First-Time Offer</h4><p>Save up to $50 on your first order</p></div>
-          <span class="hero-badge">New</span>
+          <span class="badge">New</span>
         </div>
       </div>
-      <div class="hero-card-row">
-        <div class="hero-stat reveal reveal-delay-1"><div class="num">1–3h</div><p>Delivery<br/>window</p></div>
-        <div class="hero-stat reveal reveal-delay-2"><div class="num">21+</div><p>Cities<br/>covered</p></div>
+      <div class="hcard-stats">
+        <div class="hstat r r1"><div class="num">1–3h</div><p>Delivery window</p></div>
+        <div class="hstat r r2"><div class="num">21+</div><p>Cities covered</p></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── TICKER ── -->
 <div class="ticker">
-  <div class="ticker-track">
+  <div class="ticker-wrap">
     <span>Same-Day Delivery <b>Sacramento</b></span><span>·</span>
     <span>Free Delivery on qualifying orders</span><span>·</span>
     <span>Open <b>9 AM – 9 PM</b> Daily</span><span>·</span>
@@ -259,137 +297,157 @@ footer a{color:var(--teal);font-weight:500}
   </div>
 </div>
 
-<div class="section reveal">
-  <p class="label">How It Works</p>
-  <h2 class="title">Three steps to <em>your door</em></h2>
-  <p class="subtitle">No dispensary trip. No hassle. Just premium cannabis delivered fast.</p>
+<!-- ── HOW IT WORKS ── -->
+<div class="wrap r">
+  <p class="lbl">How It Works</p>
+  <h2 class="ttl">Three steps to <em>your door</em></h2>
+  <p class="sub">No dispensary trip. No hassle. Premium cannabis delivered fast.</p>
   <div class="steps">
     <div class="step">
-      <div class="step-num">01</div>
-      <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-shop-online.svg" alt="Shop Online"/>
+      <div class="step-n">01</div>
+      <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-shop-online.svg" alt="Browse online"/>
       <h3>Browse & Order</h3>
-      <p>Explore <a href="https://www.cannagram.com/menu/" rel="dofollow">Cannagram's full menu</a> — flower, edibles, vapes, concentrates, and more from the best brands in California.</p>
+      <p>Explore <a href="https://www.cannagram.com/menu/" rel="dofollow">Cannagram's full menu</a> — flower, edibles, vapes, concentrates, and more from California's best brands.</p>
     </div>
     <div class="step">
-      <div class="step-num">02</div>
+      <div class="step-n">02</div>
       <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-relax.svg" alt="Relax"/>
       <h3>Sit Back</h3>
-      <p>Order online or via the <a href="https://onelink.to/cannagram-app" rel="dofollow">Cannagram app</a>. Our verified drivers handle the rest — no waiting in line, ever.</p>
+      <p>Order via the website or the <a href="https://onelink.to/cannagram-app" rel="dofollow">Cannagram app</a>. Our licensed drivers handle everything — no waiting in line.</p>
     </div>
     <div class="step">
-      <div class="step-num">03</div>
+      <div class="step-n">03</div>
       <img src="https://www.cannagram.com/wp-content/uploads/2021/07/v3-z-enjoy.svg" alt="Enjoy"/>
       <h3>Enjoy</h3>
-      <p>Your order arrives in 1–3 hours. Premium cannabis, concierge service, right at your door — five stars every time.</p>
+      <p>Receive your order in 1–3 hours. Premium cannabis, concierge experience, delivered right to your door.</p>
     </div>
   </div>
 </div>
 
-<div class="cats-wrap reveal">
-  <div class="cats-inner">
-    <p class="label">Browse by Category</p>
-    <h2 class="title">What are you <em>looking for?</em></h2>
-    <div class="cats-grid">
-      <a href="https://www.cannagram.com/menu/categories/flower/" rel="dofollow" class="cat"><span class="cat-icon">🌿</span><span>Flower</span></a>
-      <a href="https://www.cannagram.com/menu/categories/edibles/" rel="dofollow" class="cat"><span class="cat-icon">🍬</span><span>Edibles</span></a>
-      <a href="https://www.cannagram.com/menu/categories/vape/" rel="dofollow" class="cat"><span class="cat-icon">💨</span><span>Vapes</span></a>
-      <a href="https://www.cannagram.com/menu/categories/prerolls/" rel="dofollow" class="cat"><span class="cat-icon">🚬</span><span>Pre-rolls</span></a>
-      <a href="https://www.cannagram.com/menu/categories/concentrates/" rel="dofollow" class="cat"><span class="cat-icon">💎</span><span>Concentrates</span></a>
-      <a href="https://www.cannagram.com/menu/categories/beverages/" rel="dofollow" class="cat"><span class="cat-icon">🥤</span><span>Beverages</span></a>
-      <a href="https://www.cannagram.com/menu/categories/tinctures/" rel="dofollow" class="cat"><span class="cat-icon">💧</span><span>Tinctures</span></a>
-      <a href="https://www.cannagram.com/menu/categories/topicals/" rel="dofollow" class="cat"><span class="cat-icon">🧴</span><span>Topicals</span></a>
-      <a href="https://www.cannagram.com/menu/categories/accessories/" rel="dofollow" class="cat"><span class="cat-icon">🛠️</span><span>Accessories</span></a>
+<hr class="div"/>
+
+<!-- ── CATEGORIES ── -->
+<div class="sec-alt">
+  <div class="sec-alt wrap r">
+    <p class="lbl">Browse by Category</p>
+    <h2 class="ttl">What are you <em>looking for?</em></h2>
+    <p class="sub">Every category, every format — all available for same-day delivery.</p>
+    <div class="cats">
+      <a href="https://www.cannagram.com/menu/categories/flower/" rel="dofollow" class="cat"><span class="cat-ico">🌿</span><span>Flower</span></a>
+      <a href="https://www.cannagram.com/menu/categories/edibles/" rel="dofollow" class="cat"><span class="cat-ico">🍬</span><span>Edibles</span></a>
+      <a href="https://www.cannagram.com/menu/categories/vape/" rel="dofollow" class="cat"><span class="cat-ico">💨</span><span>Vapes</span></a>
+      <a href="https://www.cannagram.com/menu/categories/prerolls/" rel="dofollow" class="cat"><span class="cat-ico">🚬</span><span>Pre-rolls</span></a>
+      <a href="https://www.cannagram.com/menu/categories/concentrates/" rel="dofollow" class="cat"><span class="cat-ico">💎</span><span>Concentrates</span></a>
+      <a href="https://www.cannagram.com/menu/categories/beverages/" rel="dofollow" class="cat"><span class="cat-ico">🥤</span><span>Beverages</span></a>
+      <a href="https://www.cannagram.com/menu/categories/tinctures/" rel="dofollow" class="cat"><span class="cat-ico">💧</span><span>Tinctures</span></a>
+      <a href="https://www.cannagram.com/menu/categories/topicals/" rel="dofollow" class="cat"><span class="cat-ico">🧴</span><span>Topicals</span></a>
+      <a href="https://www.cannagram.com/menu/categories/accessories/" rel="dofollow" class="cat"><span class="cat-ico">🛠️</span><span>Accessories</span></a>
     </div>
   </div>
 </div>
 
-<div class="section reveal">
-  <p class="label">Find Your Mood</p>
-  <h2 class="title">Shop by <em>strain type</em></h2>
-  <p class="subtitle">Every product is tagged by strain — so you always get exactly the right effect.</p>
-  <div class="strains-grid">
-    <a href="https://www.cannagram.com/menu/?type=sativa" class="strain sativa" rel="dofollow">
-      <span class="strain-tag">Sativa</span>
+<hr class="div"/>
+
+<!-- ── STRAINS ── -->
+<div class="wrap r">
+  <p class="lbl">Find Your Mood</p>
+  <h2 class="ttl">Shop by <em>strain type</em></h2>
+  <p class="sub">Every product on the menu is tagged by strain — so you always get the right effect.</p>
+  <div class="strains">
+    <a href="https://www.cannagram.com/menu/?type=Sativa" class="strain sv" rel="dofollow">
+      <span class="strain-pill">Sativa</span>
       <h3>Energizing ☀️</h3>
-      <p>Uplifting, creative energy perfect for daytime use and social moments.</p>
+      <p>Uplifting, creative energy — perfect for daytime use and social moments.</p>
     </a>
-    <a href="https://www.cannagram.com/menu/?type=indica" class="strain indica" rel="dofollow">
-      <span class="strain-tag">Indica</span>
+    <a href="https://www.cannagram.com/menu/?type=Indica" class="strain in" rel="dofollow">
+      <span class="strain-pill">Indica</span>
       <h3>Relaxing 🌙</h3>
-      <p>Deep body relaxation and calm — your nighttime wind-down ritual.</p>
+      <p>Deep body relaxation and calm — your perfect nighttime wind-down.</p>
     </a>
-    <a href="https://www.cannagram.com/menu/?type=hybrid" class="strain hybrid" rel="dofollow">
-      <span class="strain-tag">Hybrid</span>
+    <a href="https://www.cannagram.com/menu/?type=Hybrid" class="strain hy" rel="dofollow">
+      <span class="strain-pill">Hybrid</span>
       <h3>Balanced ⚡</h3>
-      <p>The best of both worlds — versatile effects for any time of day.</p>
+      <p>Best of both worlds — versatile effects for any time of day.</p>
     </a>
-    <a href="https://www.cannagram.com/menu/?type=cbd" class="strain cbd" rel="dofollow">
-      <span class="strain-tag">CBD</span>
+    <a href="https://www.cannagram.com/menu/?type=CBD" class="strain cb" rel="dofollow">
+      <span class="strain-pill">CBD</span>
       <h3>Wellness 💜</h3>
       <p>Non-intoxicating calm for daily relief, focus, and recovery.</p>
     </a>
   </div>
 </div>
 
-<div class="brands-wrap reveal">
-  <div class="brands-inner">
-    <p class="label">Top Brands</p>
-    <h2 class="title">Only the <em>best brands</em></h2>
-    <p class="subtitle">Every brand on Cannagram is hand-selected for quality, consistency, and effect.</p>
-    <div class="brands-pills">
-      <a href="https://www.cannagram.com/kiva-delivery-by-cannagram/" class="brand-pill" rel="dofollow">Kiva</a>
-      <a href="https://www.cannagram.com/west-coast-cure-cannabis-delivery/" class="brand-pill" rel="dofollow">West Coast Cure</a>
-      <a href="https://www.cannagram.com/alien-labs-cannabis-delivery/" class="brand-pill" rel="dofollow">Alien Labs</a>
-      <a href="https://www.cannagram.com/menu/brands/connected-cannabis-co-51608/" class="brand-pill" rel="dofollow">Connected Cannabis</a>
-      <a href="https://www.cannagram.com/menu/brands/stiiizy-250294/" class="brand-pill" rel="dofollow">Stiiizy</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">710 Labs</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Raw Garden</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Jeeter</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Wyld</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Papa & Barkley</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Heavy Hitters</a>
-      <a href="https://www.cannagram.com/weed-brands/" class="brand-pill" rel="dofollow">Claybourne</a>
+<!-- ── BRANDS ── -->
+<div class="sec-alt2">
+  <div class="sec-alt2 wrap r">
+    <p class="lbl">Top Brands</p>
+    <h2 class="ttl">Only the <em>best brands</em></h2>
+    <p class="sub">Every brand is hand-selected for quality, consistency, and effect.</p>
+    <div class="pills">
+      <a href="https://www.cannagram.com/kiva-delivery-by-cannagram/" class="pill" rel="dofollow">Kiva</a>
+      <a href="https://www.cannagram.com/west-coast-cure-cannabis-delivery/" class="pill" rel="dofollow">West Coast Cure</a>
+      <a href="https://www.cannagram.com/alien-labs-cannabis-delivery/" class="pill" rel="dofollow">Alien Labs</a>
+      <a href="https://www.cannagram.com/menu/brands/connected-cannabis-co-51608/" class="pill" rel="dofollow">Connected Cannabis</a>
+      <a href="https://www.cannagram.com/menu/brands/stiiizy-250294/" class="pill" rel="dofollow">Stiiizy</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">710 Labs</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Raw Garden</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Jeeter</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Wyld</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Papa &amp; Barkley</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Heavy Hitters</a>
+      <a href="https://www.cannagram.com/weed-brands/" class="pill" rel="dofollow">Claybourne</a>
     </div>
-    <a href="https://www.cannagram.com/weed-brands/" rel="dofollow" class="brands-cta">View All Brands <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div style="margin-top:32px">
+      <a href="https://www.cannagram.com/weed-brands/" rel="dofollow" class="btn btn-fill">
+        View All Brands
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M6.5 1.5l5 5-5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
-<div class="section reveal">
-  <p class="label">Current Promotions</p>
-  <h2 class="title">Active <em>deals & offers</em></h2>
-  <p class="subtitle">New deals drop regularly — check the menu to see what's live right now.</p>
+<!-- ── DEALS ── -->
+<div class="wrap r">
+  <p class="lbl">Current Promotions</p>
+  <h2 class="ttl">Active <em>deals &amp; offers</em></h2>
+  <p class="sub">New deals drop regularly — check the menu to see what's live right now.</p>
   <div class="deals">
+
     <div class="deal">
-      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/dd832920-d582-4e24-983c-057c29b22c92.png?s=f3675ee8f15656e59d1dcddf2c3ad5a2" alt="First order discount Cannagram cannabis delivery"/>
+      <div class="deal-img-wrap"><img class="deal-img" src="https://tymber-s3.imgix.net/cannagram-169/deals/dd832920-d582-4e24-983c-057c29b22c92.png?s=f3675ee8f15656e59d1dcddf2c3ad5a2" alt="$50 off first order Cannagram cannabis delivery Sacramento"/></div>
       <div class="deal-body">
-        <span class="deal-label">First Order</span>
-        <h3>$50 OFF on $150+</h3>
-        <p>New customers save up to 33%. Use <strong style="color:var(--teal)">30FTC90</strong> for $30 off $90+ or <strong style="color:var(--teal)">40FTC120</strong> for $40 off $120+.</p>
+        <span class="deal-tag">First Order</span>
+        <h3>$50 OFF on Orders of $150+</h3>
+        <p>New customers save up to 33%. Use code <strong style="color:var(--teal)">30FTC90</strong> ($30 off $90+) or <strong style="color:var(--teal)">40FTC120</strong> ($40 off $120+).</p>
         <a href="https://www.cannagram.com/menu/" rel="dofollow" class="deal-btn">Claim Offer →</a>
       </div>
     </div>
+
     <div class="deal">
-      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/c6a195d3-4700-4c96-87e1-fc7d9f02544e.png?s=c2d7242e1f9fbdc612838ab480f1ce4d" alt="40% off cannabis products Cannagram Sacramento"/>
+      <div class="deal-img-wrap"><img class="deal-img" src="https://tymber-s3.imgix.net/cannagram-169/deals/c6a195d3-4700-4c96-87e1-fc7d9f02544e.png?s=c2d7242e1f9fbdc612838ab480f1ce4d" alt="40% off selected cannabis products Cannagram Sacramento"/></div>
       <div class="deal-body">
-        <span class="deal-label">Flash Sale</span>
-        <h3>40% Off Select Products</h3>
-        <p>Rotating discounts on curated products from top brands — updated regularly on the menu.</p>
+        <span class="deal-tag">Flash Sale</span>
+        <h3>40% Off Selected Products</h3>
+        <p>Rotating discounts on curated products from top brands — refreshed regularly on the menu.</p>
         <a href="https://www.cannagram.com/weed-deals/" rel="dofollow" class="deal-btn">See All Deals →</a>
       </div>
     </div>
+
     <div class="deal">
-      <img src="https://tymber-s3.imgix.net/cannagram-169/deals/fb05ba05-f489-4bcf-ab0f-fd1101d1bc3b.png?s=5916dcf42cb93d0cdce6a4f18cc4e450" alt="Stiiizy deal buy 2 get 1 penny Cannagram"/>
+      <div class="deal-img-wrap"><img class="deal-img" src="https://tymber-s3.imgix.net/cannagram-169/deals/fb05ba05-f489-4bcf-ab0f-fd1101d1bc3b.png?s=5916dcf42cb93d0cdce6a4f18cc4e450" alt="Stiiizy buy 2 get 1 penny Cannagram weed delivery"/></div>
       <div class="deal-body">
-        <span class="deal-label">Stiiizy</span>
+        <span class="deal-tag">Stiiizy</span>
         <h3>Buy 2, Get 1 for $0.01</h3>
         <p>Purchase any 2 Stiiizy products and add a third for just a penny. Flower not included.</p>
         <a href="https://www.cannagram.com/menu/brands/stiiizy-250294/" rel="dofollow" class="deal-btn">Shop Stiiizy →</a>
       </div>
     </div>
+
   </div>
 </div>
 
-<div class="info-band reveal">
+<!-- ── INFO BAND ── -->
+<div class="info-band r">
   <div class="info-grid">
     <div class="info-item"><h4>🕘 Open Daily</h4><p>9:00 AM – 9:00 PM<br/>Order by 8 PM for same-day</p></div>
     <div class="info-item"><h4>⚡ Fast Delivery</h4><p>1–3 hours from order<br/>or schedule in advance</p></div>
@@ -398,12 +456,13 @@ footer a{color:var(--teal);font-weight:500}
   </div>
 </div>
 
-<div class="cities-wrap reveal">
-  <div class="cities-inner">
-    <p class="label">Delivery Coverage</p>
-    <h2 class="title">Cannabis delivery <em>near you</em></h2>
-    <p class="subtitle">Cannagram delivers across the greater Sacramento metro and surrounding counties.</p>
-    <div class="cities-grid">
+<!-- ── CITIES ── -->
+<div class="sec-alt">
+  <div class="sec-alt wrap r">
+    <p class="lbl">Delivery Coverage</p>
+    <h2 class="ttl">Cannabis delivery <em>near you</em></h2>
+    <p class="sub">Cannagram delivers across the greater Sacramento metro and surrounding counties. Free delivery on qualifying orders.</p>
+    <div class="cloud">
       <a href="https://www.cannagram.com/where-we-deliver/sacramento/" class="city" rel="dofollow">Sacramento</a>
       <a href="https://www.cannagram.com/where-we-deliver/roseville/" class="city" rel="dofollow">Roseville</a>
       <a href="https://www.cannagram.com/where-we-deliver/folsom/" class="city" rel="dofollow">Folsom</a>
@@ -422,15 +481,21 @@ footer a{color:var(--teal);font-weight:500}
       <a href="https://www.cannagram.com/where-we-deliver/orangevale-cannabis-delivery-dispensary/" class="city" rel="dofollow">Orangevale</a>
       <a href="https://www.cannagram.com/where-we-deliver/loomis-cannabis-delivery-dispensary/" class="city" rel="dofollow">Loomis</a>
       <a href="https://www.cannagram.com/where-we-deliver/rio-linda-cannabis-delivery-dispensary/" class="city" rel="dofollow">Rio Linda</a>
-      <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="city" style="border-color:var(--teal);color:var(--teal);font-weight:700">+ All Areas</a>
+      <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="city" style="border-color:var(--teal);color:var(--teal);font-weight:600">+ All Areas</a>
     </div>
-    <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="cities-cta">Check Your Delivery Area <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div style="margin-top:32px">
+      <a href="https://www.cannagram.com/where-we-deliver/" rel="dofollow" class="btn btn-fill">
+        Check Your Delivery Area
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M6.5 1.5l5 5-5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
-<article class="article reveal">
+<!-- ── ARTICLE ── -->
+<article class="article r">
   <h2>Why Cannagram is Sacramento's #1 Cannabis Delivery</h2>
-  <p><a href="https://www.cannagram.com/" rel="dofollow">Cannagram</a> is the premier cannabis delivery service in the Sacramento area, offering a curated selection of premium products from California's top brands — delivered directly to your door with no dispensary visit required.</p>
+  <p><a href="https://www.cannagram.com/" rel="dofollow">Cannagram</a> is the premier cannabis delivery service in Sacramento, offering a curated selection of premium products from California's top brands — delivered directly to your door with no dispensary visit required.</p>
 
   <h2>Same-Day Cannabis Delivery, Daily</h2>
   <p>Cannagram operates daily from 9:00 AM to 9:00 PM. Place your order through the <a href="https://www.cannagram.com/menu/" rel="dofollow">online menu</a> before 8 PM and it arrives within 1–3 hours. You can also schedule your delivery window in advance. Free delivery is available on orders meeting the minimum for your ZIP code.</p>
@@ -438,37 +503,47 @@ footer a{color:var(--teal);font-weight:500}
   <h2>The Full Product Menu</h2>
   <ul>
     <li><a href="https://www.cannagram.com/menu/categories/flower/" rel="dofollow">Flower</a> — Indoor, greenhouse, and outdoor strains from premium California cultivators</li>
-    <li><a href="https://www.cannagram.com/menu/categories/edibles/" rel="dofollow">Edibles</a> — Gummies, chocolates, and mints from brands like Kiva and Wyld</li>
-    <li><a href="https://www.cannagram.com/menu/categories/vape/" rel="dofollow">Vapes</a> — Cartridges and disposables from Stiiizy, West Coast Cure, Heavy Hitters, and more</li>
-    <li><a href="https://www.cannagram.com/menu/categories/prerolls/" rel="dofollow">Pre-rolls</a> — Classic and infused joints, ready to smoke</li>
+    <li><a href="https://www.cannagram.com/menu/categories/edibles/" rel="dofollow">Edibles</a> — Gummies, chocolates, and mints from Kiva, Wyld, and more</li>
+    <li><a href="https://www.cannagram.com/menu/categories/vape/" rel="dofollow">Vapes</a> — Cartridges and disposables from Stiiizy, West Coast Cure, Heavy Hitters</li>
+    <li><a href="https://www.cannagram.com/menu/categories/prerolls/" rel="dofollow">Pre-rolls</a> — Classic and infused joints, ready to go</li>
     <li><a href="https://www.cannagram.com/menu/categories/concentrates/" rel="dofollow">Concentrates</a> — Live resin, rosin, wax, and shatter from top extractors</li>
     <li><a href="https://www.cannagram.com/menu/categories/beverages/" rel="dofollow">Beverages</a> — Cannabis-infused drinks for a smoke-free experience</li>
   </ul>
 
-  <h2>Loyalty Rewards & Promotions</h2>
-  <p>Cannagram rewards loyal customers through their <a href="https://1872.w.alpineiq.com/a/login" rel="dofollow">Loyalty Wallet</a> — earn points on every order and redeem them for discounts. New customers get generous <a href="https://www.cannagram.com/weed-deals/" rel="dofollow">first-order promotions</a> including up to $50 off. Check <a href="https://www.cannagram.com/deals/menu/" rel="dofollow">current deals</a> for what's active.</p>
+  <h2>Loyalty Rewards &amp; Promotions</h2>
+  <p>Cannagram rewards loyal customers through their <a href="https://1872.w.alpineiq.com/a/login" rel="dofollow">Loyalty Wallet</a>. Earn points on every order and redeem them for discounts. New customers get generous <a href="https://www.cannagram.com/weed-deals/" rel="dofollow">first-order promotions</a> — including up to $50 off. Check <a href="https://www.cannagram.com/deals/menu/" rel="dofollow">all current deals</a> for what's active.</p>
 
   <h2>The Cannagram App</h2>
   <p><a href="https://onelink.to/cannagram-app" rel="dofollow">Download the Cannagram app</a> for iOS and Android to browse the full menu, track your delivery in real time, and access app-exclusive deals.</p>
 
-  <h2>Payment & Cannabis Taxes</h2>
-  <p>Cannagram offers several <a href="https://www.cannagram.com/payment-options/" rel="dofollow">payment options</a>. For a transparent breakdown of what to expect at checkout, see their guide to <a href="https://www.cannagram.com/cannabis-taxes/" rel="dofollow">California cannabis taxes</a>. Questions? Check the <a href="https://www.cannagram.com/faq/" rel="dofollow">FAQ page</a>.</p>
+  <h2>Payment &amp; Cannabis Taxes</h2>
+  <p>Cannagram offers multiple <a href="https://www.cannagram.com/payment-options/" rel="dofollow">payment options</a>. For a transparent breakdown of what to expect at checkout, see their guide to <a href="https://www.cannagram.com/cannabis-taxes/" rel="dofollow">California cannabis taxes</a>. Have questions? Check the <a href="https://www.cannagram.com/faq/" rel="dofollow">FAQ page</a>.</p>
 </article>
 
-<section class="footer-cta reveal">
-  <div class="footer-cta-bg"></div>
+<!-- ── FOOTER CTA ── -->
+<section class="fcta r">
   <h2>Ready to <em>order?</em></h2>
   <p>Sacramento's best cannabis delivery is just a few clicks away.</p>
-  <a href="https://www.cannagram.com/menu/" rel="dofollow" class="btn-primary" style="font-size:1rem;padding:16px 36px">Go to Cannagram Menu <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a href="https://www.cannagram.com/menu/" rel="dofollow" class="btn btn-fill" style="font-size:.95rem;padding:15px 32px">
+    Go to Cannagram Menu
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M6.5 1.5l5 5-5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </section>
 
+<!-- ── FOOTER ── -->
 <footer>
-  <p>Informational page linking to <a href="https://www.cannagram.com/" rel="dofollow">Cannagram.com</a> — Sacramento's licensed cannabis delivery service. Must be 21+ to order. Available in select California areas only. &nbsp;·&nbsp; <a href="https://www.cannagram.com/cg-blog/" rel="dofollow">Blog</a> &nbsp;·&nbsp; <a href="https://www.cannagram.com/faq/" rel="dofollow">FAQ</a> &nbsp;·&nbsp; <a href="https://www.cannagram.com/payment-options/" rel="dofollow">Payment</a> &nbsp;·&nbsp; <a href="https://www.cannagram.com/cannabis-taxes/" rel="dofollow">Taxes</a></p>
+  <p>
+    Informational page linking to <a href="https://www.cannagram.com/" rel="dofollow">Cannagram.com</a> — Sacramento's licensed cannabis delivery service. Must be 21+ to order. Available in select California areas only.
+    &nbsp;·&nbsp; <a href="https://www.cannagram.com/cg-blog/" rel="dofollow">Blog</a>
+    &nbsp;·&nbsp; <a href="https://www.cannagram.com/faq/" rel="dofollow">FAQ</a>
+    &nbsp;·&nbsp; <a href="https://www.cannagram.com/payment-options/" rel="dofollow">Payment</a>
+    &nbsp;·&nbsp; <a href="https://www.cannagram.com/cannabis-taxes/" rel="dofollow">Taxes</a>
+  </p>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
